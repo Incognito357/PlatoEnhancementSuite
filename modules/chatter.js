@@ -214,6 +214,7 @@ var Chatter = function(){
 			_this.emojis.forEach(function(o,i){
 				msg = msg.replace(new RegExp("("+o.value+")(?:(?!<\/))(\s)?",'gu'),"<i class='em "+o.css+"'>"+o.value+"</i>");
 			});
+			msg = msg.replace(new RegExp(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/g, "<a href='$1'>$1</a>");
 			$(o).find("span > span").html(msg);
 		});
 		_this.msglist.find("div span > h3 > span").each(function(i,o){
